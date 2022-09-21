@@ -1,0 +1,2794 @@
+/* Dev: Balabaev Danila, 2022, balabaev-production */
+
+/* IMPORT FONT`S */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap')
+
+// Conception color`s
+$color-main-light: #51becc
+$color-main-dark: #51becc
+$color-main-accent: #ffef24
+$color-black: #333333 
+$color-light: #fcfcfc
+$color-silver: #ebecec
+$color-gray: #9c9d9d
+$color-red: #ee1111
+$color-green: #059024
+
+$color-black_a: rgba(51, 51, 51, 0.8)
+$color-light_a: rgba(252, 252, 252, 0.5)
+
+// Conception text
+%h1
+    font-family: 'Raleway'
+    font-style: normal
+    font-weight: 800
+    font-size: 60px
+    line-height: 70px
+    text-transform: uppercase
+    color: $color-black
+
+%h2
+    font-family: 'Raleway'
+    font-style: normal
+    font-weight: 800
+    font-size: 40px
+    line-height: 47px
+    text-transform: uppercase
+    color: $color-black
+
+%h3
+    font-family: 'Raleway'
+    font-style: normal
+    font-weight: bold
+    font-size: 24px
+    line-height: 28px
+    color: $color-black
+
+%p
+    font-family: 'Open Sans'
+    font-style: normal
+    font-weight: normal
+    font-size: 16px
+    line-height: 175%
+    color: $color-black
+
+%p-info
+    font-family: 'Open Sans'
+    font-style: normal
+    font-weight: normal
+    font-size: 12px
+    line-height: 175%
+    color: $color-gray
+
+%label
+    font-family: 'Open Sans'
+    font-style: normal
+    font-weight: normal
+    font-size: 10px
+    line-height: 138%
+    color: $color-gray
+
+// FLEX SETTINGS
+%flex-c
+    display: flex
+    justify-content: center
+    align-items: center
+
+%flex-l
+    display: flex
+    justify-content: flex-start
+    align-items: center
+
+%flex-r
+    display: flex
+    justify-content: flex-end
+    align-items: center
+
+// Conception buttons
+%button__fill
+    padding: 11px 30px
+    background-color: $color-main-light
+    color: $color-silver
+    border: solid 2px $color-main-light
+    text-decoration: none
+    border-radius: 5px
+    @extend %p
+    cursor: pointer
+
+    &:hover
+        background: none
+        color: $color-main-light
+
+    &:active
+        border-color: rgba(0, 0, 0, 0)
+
+%button__not-fill
+    padding: 11px 30px
+    color: $color-main-light
+    border: solid 2px $color-main-light
+    text-decoration: none
+    border-radius: 5px
+    @extend %p
+    cursor: pointer
+
+    &:hover
+        border-color: rgba(0, 0, 0, 0)
+
+// Conception block
+%block
+    background: #FFFFFF
+    border: 1px solid #ECECEC
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.06)
+    border-radius: 5px
+
+// Conception input
+%input
+    position: relative
+    height: 50px
+
+    >input
+        @extend %p
+        width: 100%
+        height: 100%
+        background: #FFFFFF
+        border: 1px solid #DCDCDC
+        border-radius: 5px
+        padding-left: 10px
+        padding-top: 21px
+        padding-right: 10px
+        padding-bottom: 8px
+
+    >label
+        @extend %label
+        position: absolute
+        left: 10px
+        top: 7px
+
+    >button
+        @extend %button__fill 
+
+
+/*** The general style`s ***/
+*
+    box-sizing: border-box
+    padding: 0
+    margin: 0
+
+html
+    max-width: 1920px
+    min-width: 640px
+    height: auto
+    margin: 0 auto
+    
+    @media ( max-width: 640px )
+        position: absolute
+        z-index: 9
+        top: 0px
+        left: 0px
+    
+body
+    max-width: 1920px
+    min-width: 640px
+    height: auto
+    margin: 0 auto
+
+    &.fixed
+        overflow: hidden
+
+header
+    width: 100%
+    height: auto
+    position: absolute
+    z-index: 99
+
+main
+    width: 100%
+    height: auto
+
+footer
+    width: 100%
+    height: auto
+
+.wrap
+    max-width: 1920px
+    min-width: 640px
+    height: auto
+    margin: 0 auto
+    position: relative
+
+.cont
+    max-width: 1200px
+    min-width: 640px
+    height: 100%
+    margin: 0 auto
+
+    @media ( max-width: 1200px )
+        padding-left: 20px
+        padding-right: 20px
+
+.cont-flex
+    max-width: 1200px
+    min-width: 640px
+    height: 100%
+    margin: 0 auto
+    @extend %flex-c
+
+    @media ( max-width: 1200px )
+        padding-left: 20px
+        padding-right: 20px
+
+    >.cont__sub-left
+        width: 50%
+        height: 100%
+        @extend %flex-l
+
+    >.cont__sub-right
+        width: 50%
+        height: 100%
+        @extend %flex-r
+
+
+
+
+/* The style`s for index page */
+.top-bar
+    width: 100%
+    height: 50px
+    background-color: $color-main-light
+
+.top-bar__phone
+    @extend %flex-c
+    margin-right: 30px
+
+    @media ( max-width: 640px )
+        margin-right: 20px
+
+.top-bar__phone__image
+    margin-right: 5px
+
+.top-bar__phone__text
+    @extend %p
+    font-weight: 700
+    font-size: 14px
+    color: $color-silver
+
+.top-bar__email
+    @extend %flex-c
+
+.top-bar__email__image
+    margin-right: 5px
+
+.top-bar__email__text
+    @extend %p
+    font-weight: 700
+    font-size: 14px
+    color: $color-silver
+
+.top-bar__authentication
+    @extend %flex-c
+
+.top-bar__authentification__image
+    margin-right: 5px
+
+.top-bar__authentification__buttons
+    @extend %flex-c
+    @extend %p
+    color: $color-silver
+
+    >span
+        margin-left: 5px
+        margin-right: 5px
+
+.top-bar__authentification__buttons-item
+    color: $color-silver
+    text-decoration: none
+
+    &:hover
+        color: $color-black
+
+
+
+
+/* The style`s for main navigation */
+.nav
+    width: 100%
+    height: auto
+    padding-top: 40px
+
+    >.cont-flex
+
+        @media ( max-width: 640px )
+            padding-left: 40px
+            padding-right: 40px
+
+        >.cont__sub-left
+            width: 10%
+        >.cont__sub-right
+            width: 90%
+
+.nav
+    .nav__link
+        text-decoration: none
+        color: $color-silver
+        @extend %p
+        margin-left: 43px
+
+        &:hover
+            color: $color-black
+
+        @media ( max-width: 780px )
+            display: none
+
+.nav
+    >.cont-flex
+        >.cont__sub-right.color
+            >a
+                color: $color-black
+                background-color: #fff
+                padding-left: 10px
+                padding-right: 10px
+                border-radius: 50px
+                margin-left: 23px
+
+                &:hover
+                    color: $color-main-light
+
+.nav__mobile-button
+    width: 60px
+    height: 60px
+    border: solid 3px $color-silver
+    border-radius: 5px
+    padding: 10px
+    cursor: pointer
+    transition: 0.2s
+    display: none
+
+    &.active
+        transform: rotate(90deg)
+
+    @media ( max-width: 780px )
+        display: block
+
+    >div
+        width: 100%
+        height: 3px
+        border-radius: 5px
+        background-color: $color-silver
+        margin-top: 7px
+
+        &:nth-child(1)
+            margin-top: 6px
+
+    &.color
+        border: solid 3px $color-black
+
+        >div
+            background-color: $color-black
+
+.nav__mobile-button.active
+    transform: rotate(90deg)
+            
+.nav-mobile
+    background-color: $color-black_a
+    position: fixed
+    z-index: 999
+    top: 0
+    left: 0
+    width: 100%
+    height: 1920px
+    transition: 0.5s
+    transform: translateX(-100%)
+
+    &.active
+        transform: none
+
+.nav-mobile__cont
+    background-color: $color-light
+    width: 80%
+    height: 100%
+    padding: 40px
+    padding-top: 90px
+    position: relative
+    transition: 0.5s
+    transform: translateX(-100%)
+
+    &.active
+        transform: none
+
+.nav-mobile__logo
+    margin-bottom: 50px
+
+.nav-mobile__button-close
+    width: 60px
+    height: 60px
+    position: absolute
+    top: 100px
+    right: 60px
+    cursor: pointer
+
+.nav-mobile
+    .nav__link
+        display: block
+        text-decoration: none
+        @extend %p
+        font-size: 20px
+        padding-top: 20px
+        padding-bottom: 20px
+        border-top: solid 1px #ececec
+
+        &:last-child
+            border-bottom: solid 1px #ececec
+
+
+
+
+/* SCROLL NAVIAGTION */
+.nav-scroll
+    position: fixed
+    left: 0
+    top: 0
+    right: 0
+    height: 100px
+    background-color: #fff
+    box-shadow: 0px 5px 25px 0 rgba(0, 0, 0, 0.06)
+    transition: 0.5s
+    transform: translateY(-100%)
+
+    &.active
+        transform: none
+
+    >.cont-flex
+
+        @media ( max-width: 640px )
+            padding-left: 40px
+            padding-right: 40px
+
+        >.cont__sub-left
+            width: 10%
+        >.cont__sub-right
+            width: 90%
+
+.nav-scroll__items
+    >.nav__link
+        text-decoration: none
+        color: $color-black
+        @extend %p
+        margin-left: 43px
+
+        &:hover
+            color: $color-main-light
+
+        @media ( max-width: 780px )
+            display: none
+    
+    .nav-scroll__button
+        width: 60px
+        height: 60px
+        border: solid 3px $color-black
+        border-radius: 5px
+        padding: 10px
+        cursor: pointer
+        transition: 0.2s
+        display: none
+
+        &.active
+            transform: rotate(90deg)
+
+        @media ( max-width: 780px )
+            display: block
+
+        >div
+            width: 100%
+            height: 3px
+            border-radius: 5px
+            background-color: $color-black
+            margin-top: 7px
+
+            &:nth-child(1)
+                margin-top: 6px
+
+.nav-scroll__logo-item
+    height: 70px
+
+
+
+
+/* The style`s for main banner in index page */
+.banner
+    width: 100%
+    height: auto
+    padding-top: 180px
+    padding-bottom: 100px
+    background-image: url('../image/main-banner__index-page/stock-photo-close-up-of-sparks-fly-out-machine-head-for-metal-processing-at-the-factory-automotive-production-1903835500 1.png')
+    background-color: $color-main-light
+    background-size: auto 150%
+    background-position: 50% 50%
+    background-repeat: no-repeat
+
+    >.cont-flex
+        @media ( max-width: 960px )
+            display: block
+
+        >.cont__sub-left
+            display: block
+            padding-top: 62px
+
+            @media ( max-width: 960px )
+                width: 100%
+
+            @media ( max-width: 640px )
+                text-align: center
+
+        >.cont__sub-right
+            align-items: start
+
+            @media ( max-width: 960px )
+                display: none
+
+
+.banner__title
+    @extend %h1
+    color: $color-silver
+
+.banner__text
+    @extend %p
+    color: $color-silver
+    font-size: 18px
+    padding-top: 20px
+    padding-bottom: 30px
+
+.banner__buttons
+    @extend %flex-l
+
+    @media ( max-width: 640px )
+        display: block
+
+.banner__buttons-fill
+    @extend %button__fill
+    background-color: $color-silver
+    border-color: $color-silver
+    color: $color-main-light
+    padding: 6px 20px
+    margin-right: 20px
+
+    &:hover
+        color: $color-silver
+
+    @media ( max-width: 640px )
+        display: block
+        padding: 11px 30px
+        margin-right: 0
+
+.banner__buttons-not-fill
+    @extend %button__not-fill
+    border-color: $color-silver
+    color: $color-silver
+    padding: 6px 20px
+
+    @media ( max-width: 640px )
+        display: block
+        padding: 11px 30px
+        margin-top: 10px
+
+.banner__image
+    width: 538px
+    height: 531px
+    background-image: url('../image/main-banner__index-page/Vector 3.png')
+    background-size: 100% auto
+    background-position: 50% 50%
+    background-repeat: no-repeat
+
+.banner__image-item
+    width: 205px
+    height: auto
+    padding: 16px 18px
+    background-color: $color-light
+    border-radius: 5px
+    @extend %p
+    font-size: 14px
+    font-weight: 700
+    line-height: 18.78px
+
+    @media ( max-width: 1200px )
+        display: none
+
+.banner__image-item.e1
+    margin-top: 25px
+    transform: translateX(361px)
+
+.banner__image-item.e2
+    margin-top: 50px
+    transform: translateX(-89px)
+
+.banner__image-item.e3
+    margin-top: 205px
+    transform: translateX(299px)
+
+
+
+/* The style`s for srvices block in the index page */
+.services
+    width: 100%
+    height: auto
+    padding-top: 100px
+    padding-bottom: 100px
+
+.services__title
+    @extend %h2
+    color: $color-black
+
+.services__text
+    @extend %p
+    padding-top: 20px
+    padding-bottom: 50px
+
+.services___big-blocks
+    width: 100%
+    height: auto
+    @extend %flex-c
+    align-items: stretch
+
+    @media ( max-width: 1024px )
+        display: block
+
+.services__big-blocks-item
+    @extend %block
+    width: 50%
+    height: auto
+    padding: 50px 40px
+    position: relative
+    margin-right: 30px
+    background-position: 105% 80%
+    background-repeat: no-repeat
+
+    &:last-child
+        margin-right: 0
+
+    @media ( max-width: 1024px )
+        width: 100%
+        margin-top: 30px
+
+.services__big-blocks-item__title
+    @extend %h3
+
+.services__big-blocks-item__text
+    @extend %p
+    line-height: 28px
+    padding-top: 20px
+    padding-right: 215px
+    padding-bottom: 100px
+
+.services__big-blocks-item__info
+    position: absolute
+    left: 40px
+    bottom: 50px
+    @extend %flex-l
+
+.services__big-blocks-item__info__price
+    @extend %p
+    font-size: 14px
+    margin-right: 18px
+
+.services__big-blocks-item__info__image
+    margin-right: 5px
+
+.services__big-blocks-item__info__link
+    text-decoration: none
+    color: $color-main-light
+    @extend %p
+    font-size: 14px
+    font-weight: 600
+
+    &:hover
+        color: $color-black
+
+
+.services___small-blocks
+    width: 100%
+    height: auto
+    margin-top: 30px
+    @extend %flex-c
+    align-items: stretch
+
+    @media ( max-width: 1024px )
+        display: block
+        margin-top: 0
+
+.services___small-blocks-item
+    @extend %block
+    width: calc(100%/3)
+    height: auto
+    padding: 50px 40px
+    position: relative
+    margin-right: 30px
+
+    &:last-child
+        margin-right: 0
+
+    @media ( max-width: 1024px )
+        width: 100%
+        margin-top: 30px
+
+.services___small-blocks-item__title
+    @extend %h3
+
+.services___small-blocks-item__text
+    @extend %p
+    padding-top: 14px
+    padding-bottom: 73px
+
+.services__small-blocks-item__info
+    position: absolute
+    left: 40px
+    bottom: 50px
+    @extend %flex-l
+
+.services__small-blocks-item__info__price
+    @extend %p
+    font-size: 14px
+    margin-right: 18px
+
+.services__small-blocks-item__info__image
+    margin-right: 5px
+
+.services__small-blocks-item__info__link
+    text-decoration: none
+    color: $color-main-light
+    @extend %p
+    font-size: 14px
+    font-weight: 600
+
+    &:hover
+        color: $color-black
+
+
+.services-request
+    width: 100%
+    height: auto
+    padding: 40px 50px
+    @extend %block
+    margin-top: 30px
+    background-image: url('../image/services/Union.png'), url('../image/services/image 48.png')
+    background-position: 100% 50%, 50% 50%
+    background-repeat: no-repeat
+    background-size: auto, auto 105%
+
+.services-request__title
+    @extend %h3
+
+.services-request__text
+    @extend %p
+    padding-top: 14px
+    padding-bottom: 30px
+
+    >span
+        font-weight: 600
+
+.services-request__form
+    @extend %flex-l
+    align-items: stretch
+
+    @media ( max-width: 960px )
+        display: block
+
+.services-request__form-item
+    @extend %input
+    width: 268px
+    height: auto
+    margin-right: 30px
+
+    &:last-child
+        margin-right: 0
+
+    @media ( max-width: 960px )
+        width: 100%
+        margin-bottom: 10px
+
+.services-request__info
+    @extend %p-info
+    padding-top: 10px
+
+
+/* The style`s for advantages block on the index page */
+.advantages
+    width: 100%
+    height: auto
+    padding-top: 100px
+    padding-bottom: 100px
+
+.advantages__items
+    width: 100%
+    height: auto
+    padding: 10px
+    background-image: url('../image/advantages__index-page/Vector 8.png')
+    background-position: 100% 50%
+    background-repeat: no-repeat
+    background-size: auto 100%
+
+    @media ( max-width: 1200px  )
+        background: none
+        
+
+    >.cont
+        @extend %flex-l
+        padding-right: 450px
+        margin-bottom: 45px
+
+        &:last-child
+            margin-bottom: 0
+
+        @media ( max-width: 1200px  )
+            justify-content: center
+            padding-right: 0
+
+        @media ( max-width: 640px )
+            display: block
+            margin-bottom: 0
+
+.advantages__items-item
+    max-width: 380px
+
+    @media ( max-width: 640px )
+        margin: 0 auto
+        padding-bottom: 30px
+
+.advantages__items-item__text
+    @extend %h3
+    padding-left: 30px
+    padding-top: 20px
+    padding-right: 30px
+
+
+
+
+/* The style`s for trust block on the index page */
+.trust
+    width: 100%
+    height: auto
+    padding-top: 50px
+    padding-bottom: 130px
+
+.trust__title
+    @extend %h2
+
+.trust__text
+    @extend %p
+    padding-top: 20px
+    padding-bottom: 60px
+
+.trust__image
+    width: 100%
+    height: auto
+    background-image: url('../image/trust__index-page/stock-photo--d-rendering-of-extruded-high-resolution-physical-map-with-relief-of-russia-isolated-on-white-1183629892 1.png')
+    background-repeat: no-repeat
+    background-position: 0px 50%
+    background-size: auto 100%
+
+    @media ( max-width: 1200px )
+        background: none
+        padding-left: 20px
+        padding-right: 20px
+
+.trust__image-item
+    margin-left: 40%
+
+    @media ( max-width: 1200px )
+        margin-left: 0
+        width: 100%
+
+
+
+
+/* The style`s for news block on the index page */
+.news-block
+    width: 100%
+    height: auto
+    padding-top: 100px
+    padding-bottom: 100px
+
+.news-block__title
+    @extend %h2
+
+.news-block__items
+    width: 100%
+    height: 100%    
+    @extend %flex-c
+    align-items: stretch
+    padding-top: 50px
+
+    @media ( max-width: 1024px )
+        display: block
+
+.news-block__items-item
+    width: calc(100%/3)
+    height: auto
+    padding: 50px 40px
+    @extend %block
+    padding-bottom: 100px
+    margin-right: 30px
+    position: relative
+
+    &:last-child
+        margin-right: 0
+
+    @media ( max-width: 1024px )
+        margin-right: 0
+        width: 100%
+        margin-bottom: 30px
+
+        &:last-child
+            margin-bottom: 0
+
+.news-block__items-item__date
+    @extend %p-info
+    padding-bottom: 10px
+
+.news-block__items-item__title
+    @extend %h3
+    font-weight: 600
+    line-height: 30px
+
+.news-block__items-item__link
+    @extend %flex-l
+    position: absolute
+    left: 40px
+    bottom: 50px
+
+.news-block__items-item__link__image
+    margin-right: 5px
+
+.news-block__items-item__link__text
+    text-decoration: none
+    @extend %p
+    font-size: 14px
+    font-weight: 600
+    color: $color-main-light
+
+    &:hover
+        color: $color-black
+
+
+
+
+/* The style`s for reuest block on the index page */
+.request
+    width: 100%
+    height: auto
+    background-image: url('../image/request/stock-photo-industrial-engineer-in-hard-hat-wearing-safety-jacket-uses-laptop-he-works-in-the-heavy-industry-761906863 1.png'), url('../image/request/stock-photo-industrial-engineer-in-hard-hat-wearing-safety-jacket-uses-laptop-he-works-in-the-heavy-industry-761906863 2.png')
+    background-repeat: no-repeat
+    background-size: auto 100%
+    background-position: 0px 50%, 100% 50%
+
+    >.cont
+        @extend %flex-r
+
+    @media ( max-width: 640px )
+        padding-top: 20px
+        padding-bottom: 20px
+
+.request__content
+    width: 684px
+    height: 100%
+    padding: 100px 40px
+    @extend %block
+
+.request__content__title
+    @extend %h2
+
+.request__content__text
+    @extend %p
+    padding-top: 10px
+    padding-bottom: 30px
+
+.request__content__form
+    width: 100%
+    height: auto
+
+.request__content__form__small-input
+    @extend %flex-c
+
+.request__content__form__small-input-item
+    @extend %input
+    width: 50%
+    margin-right: 30px
+
+    &:last-child
+        margin-right: 0
+
+.request__content__form__big-input
+    margin-top: 20px
+
+.request__content__form__big-input-item
+    @extend %input
+    width: 100%
+
+.request__content__form__button
+    width: 100%
+    height: auto
+    margin-top: 20px
+    @extend %flex-r
+
+.request__content__form__button__msg
+    @extend %p-info
+    width: 60%
+
+.request__content__form__button-item
+    @extend %input
+    width: 40%
+    @extend %flex-r
+
+
+
+/* The style`s for FOOTER block */
+.footer
+    width: 100%
+    height: auto
+    background-color: $color-main-light
+    padding-top: 50px
+    padding-bottom: 50px
+
+.footer__title
+    padding-bottom: 20px
+    @extend %flex-l
+
+.footer__title__logo
+    width: 5%
+    margin-right: 22px
+
+    @media ( max-width: 960px )
+        width: 10%
+
+.footer__title__text
+    width: 15%
+    margin-right: 22px
+
+    @media ( max-width: 960px )
+        width: 30%
+
+.footer__title__text-item
+    @extend %h3
+    color: $color-light
+    
+.footer__title__hr
+    border-top: solid 1px #ececec
+    width: 80%
+
+    @media ( max-width: 960px )
+        width: 60%
+
+.footer__content
+    width: 100%
+    height: auto
+    @extend %flex-l
+    align-items: start
+
+    @media ( max-width: 1100px )
+        display: block
+
+.footer__content__text
+    @extend %p
+    color: $color-light
+    max-width: 380px
+    min-width: 380px
+    font-size: 14px
+    line-height: 24.5px
+    margin-right: 133px
+
+    @media ( max-width: 1200px )
+        margin-right: 20px
+
+    @media ( max-width: 1024px )
+        max-width: 640px
+
+.footer__content__nav1
+    max-width: 277px
+    min-width: 277px
+    margin-right: 30px
+
+    @media ( max-width: 1200px )
+        margin-right: 20px
+
+    @media ( max-width: 1024px )
+        margin-top: 30px
+
+.footer__content__nav1-item
+    display: block
+    @extend %p
+    text-decoration: none
+    color: $color-light
+    font-size: 14px
+    line-height: 24.5px
+    margin-bottom: 10px
+
+    &:hover
+        color: $color-black
+
+.footer__content__nav2
+    max-width: 175px
+    min-width: 175px
+    margin-right: 30px
+
+    @media ( max-width: 1200px )
+        margin-right: 20px
+
+.footer__content__nav2-item
+    display: block
+    @extend %p
+    text-decoration: none
+    color: $color-light
+    font-size: 14px
+    line-height: 24.5px
+    margin-bottom: 10px
+
+    &:hover
+        color: $color-black
+
+.footer__content__contact
+    max-width: 175px
+    min-width: 175px
+
+    @media ( max-width: 1024px )
+        margin-top: 30px
+
+.footer__content__contact__text
+    @extend %p
+    color: $color-light
+    margin-bottom: 10px
+
+.footer__content__contact__social
+    @extend %flex-l
+
+.footer__content__contact__social__link
+    margin-right: 5px
+    text-decoration: none
+
+.footer__info-text
+    width: 100%
+    height: auto
+    @extend %p-info
+    color: $color-silver
+    margin-top: 36px
+
+
+
+/* The copyright block on the footer section */
+.copyright
+    width: 100%
+    height: 50px
+    background-color: #1d1d1d
+
+.copyright__text
+    @extend %p
+    color: #8e8e8e
+    font-size: 14px
+
+.copyright__ideait
+    @extend %flex-r
+
+.copyright__ideait__text
+    @extend %p
+    color: #8e8e8e
+    font-size: 14px
+    margin-right: 12px
+
+
+
+
+/* *** ABOUT PAGE *** */
+.about
+    width: 100%
+    height: auto
+    padding-top: 280px
+    padding-bottom: 100px
+
+    >.cont
+        background-image: url('../image/about/Vector 3.png')
+        background-repeat: no-repeat
+        background-position: 100% 0px
+
+        @media ( max-width: 960px )
+            background: none
+
+.about__title
+    @extend %h1
+
+.about__text
+    @extend %p
+    font-size: 18px
+    line-height: 31.5px
+    padding-top: 30px
+    padding-right: 458px
+
+    @media ( max-width: 960px )
+        padding-right: 0
+
+.about__sub-text
+    margin-top: 50px
+    @extend %p
+
+/* The style`s for license block on the about page */
+.license
+    width: 100%
+    height: auto
+
+.license__title
+    @extend %h2
+    text-align: center
+
+.license__text
+    @extend %p
+    text-align: center
+
+.license__content
+    margin: 0 auto
+    max-width: 1300px
+    min-width: 640px
+    height: auto
+        
+.license__content__scroll
+    @extend %flex-l
+
+    @media ( max-width: 1200px )
+        display: block
+        text-align: center
+
+/* The style`s for trust block on the about page */
+.trust-about
+    width: 100%
+    height: auto
+    padding-top: 150px
+    padding-bottom: 150px
+
+.trust-about__title
+    @extend %h2
+    text-align: center
+
+.trust-about__content
+    text-align: center
+    width: 100%
+    height: auto
+    padding-top: 50px
+
+.trust-about__content__scroll
+    @extend %flex-c
+
+    @media ( max-width: 1610px )
+        display: block
+        text-align: center
+
+.trust-about__content__scroll-item
+    margin-left: 30px
+    margin-right: 30px
+
+    @media ( max-width: 960px )
+        margin: 20px
+
+
+
+/* *** NEWS PAGE *** */
+.news
+    width: 100%
+    height: auto
+    padding-top: 280px
+    padding-bottom: 100px
+
+.news__title
+    @extend %flex-l
+
+    @media ( max-width: 960px )
+        display: block
+
+.news__title__text
+    @extend %h1
+    margin-right: 50px
+
+    @media ( max-width: 960px )
+        margin-right: 0
+        margin-bottom: 20px
+
+.news__title__items
+    @extend %flex-c
+
+.news__title__link
+    @extend %button__not-fill
+    margin-right: 10px
+    font-size: 14px
+    padding: 6px 20px
+
+    &:last-child
+        margin-right: 0
+
+    @media ( max-width: 640px )
+        text-align: center
+
+.news__title__link.active
+    background-color: $color-main-light
+    color: $color-silver
+
+    &:hover
+        border: solid 2px $color-main-light
+        background: none
+        color: $color-main-light
+
+    &:active
+        border-color: rgba(0, 0, 0, 0)
+
+.news__big-block
+    width: 100%
+    height: auto
+    @extend %block
+    margin-top: 50px
+    @extend %flex-c
+    align-items: stretch
+    overflow: hidden
+
+.news__big-block__sub-left
+    width: 40%
+    background-image: url('../image/news/image 34.png')
+    background-repeat: no-repeat
+    background-size: 105%
+    background-position: 50% 50%
+    position: relative
+
+    @media ( max-width: 1200px )
+        background-size: auto 105%
+
+.news__big-block__sub-right
+    width: 60%
+    padding: 50px 40px
+    padding-bottom: 113px
+    position: relative
+
+.news__big-block__title
+    @extend %h3
+
+.news__big-block__text
+    @extend %p
+    line-height: 28px
+    padding-top: 13px
+
+.news__big-block__link
+    @extend %flex-l
+    position: absolute
+    left: 40px
+    bottom: 50px
+
+.news__big-block__link__image
+    margin-right: 5px
+
+.news__big-block__link__text
+    @extend %p
+    text-decoration: none
+    font-size: 14px
+    font-weight: 600
+    color: $color-main-light
+
+    &:hover
+        color: $color-black
+
+.news__big-block__category
+    @extend %button__fill
+    position: absolute
+    left: 30px
+    top: 30px
+    font-size: 14px
+    padding: 6px 20px
+
+.news__big-block__date
+    position: absolute
+    left: 30px
+    bottom: 30px
+    @extend %p-info
+    color: #ffffff
+
+.news__small-block
+    width: 100%
+    height: auto
+    margin-top: 30px
+
+    >.cont-flex
+        align-items: stretch
+        margin-bottom: 30px
+
+        &:last-child
+            margin-bottom: 0
+
+        @media ( max-width: 1200px )
+            padding-left: 0
+            padding-right: 0
+
+.news__small-block-item
+    width: 50%
+    height: auto
+    @extend %block
+    padding: 50px 40px
+    padding-bottom: 100px
+    position: relative
+    margin-right: 30px
+
+    &:last-child
+        margin-right: 0
+
+.news__small-block-item__data
+    @extend %flex-l
+
+    @media ( max-width: 960px )
+        display: block
+
+.news__small-block-item__data__date
+    @extend %p-info
+    margin-right: 10px
+
+.news__small-block-item__data__category
+    @extend %p
+    font-size: 14px
+    font-weight: 600
+    color: $color-main-light
+    text-decoration: none
+
+.news__small-block-item__title
+    @extend %h3
+    padding-top: 12px
+    font-weight: 600
+
+.news__small-block-item__link
+    position: absolute
+    left: 40px
+    bottom: 50px
+    padding-top: 10px
+    border-top: solid 1px #ececec
+
+.news__small-block-item__link__image
+    margin-right: 5px
+
+.news__small-block-item__link__button
+    @extend %p
+    font-size: 14px
+    font-weight: 600
+    color: $color-main-light
+    text-decoration: none
+
+    &:hover
+        color: $color-black
+
+
+/* *** VIEW-NEWS PAGE *** */
+/* The style`s for view a selected news on the view-news page */
+.view-news
+    width: 100%
+    height: auto
+    padding-top: 280px
+    padding-bottom: 100px
+    background-image: url('../image/news/Vector 3.png')
+    background-repeat: no-repeat
+    background-position: 100% 0px
+
+    @media ( max-width: 1024px )
+        background: none
+
+.view-news__content
+    width: 60%
+    height: auto
+
+    @media ( max-width: 1024px )
+        width: 100%
+
+.view-news__content__title
+    @extend %h2
+
+.view-news__content__data
+    width: 100%
+    height: auto
+    @extend %flex-l
+    padding-top: 30px
+    padding-bottom: 40px
+
+.view-news__content__data__category
+    @extend %p
+    font-size: 14px
+    font-weight: 600
+    color: $color-main-light
+    text-decoration: none
+    margin-right: 32px
+
+.view-news__content__data__date
+    @extend %p-info
+
+.view-news__content__text
+    width: 100%
+    height: auto
+
+.view-news__content__text__annotation
+    @extend %p
+    font-size: 18px
+    padding-bottom: 50px
+
+.view-news__content__text__all
+    @extend %p
+
+/* The style`s for recomedation block on the view-news page */
+.recomendation-news
+    width: 100%
+    height: auto
+    padding-bottom: 100px
+
+    >.cont
+        >.cont-flex
+            align-items: stretch
+
+            @media ( max-width: 1200px )
+                padding-left: 0
+                padding-right: 0
+
+.recomendation-news__title
+    @extend %h2
+    padding-bottom: 50px
+
+.recomendation-news-item
+    width: 50%
+    height: auto
+    padding: 50px 40px
+    padding-bottom: 100px
+    @extend %block
+    position: relative
+    margin-right: 30px
+
+    &:last-child
+        margin-right: 0
+
+.recomendation-news-item__data
+    @extend %flex-l
+
+    @media ( max-width: 960px )
+        display: block
+
+.recomendation-news-item__data__date
+    @extend %p-info
+    margin-right: 10px
+
+.recomendation-news-item__data__category
+    @extend %p
+    font-size: 14px
+    font-weight: 600
+    color: $color-main-light
+    text-decoration: none
+
+.recomendation-news-item__title
+    @extend %h3
+    padding-top: 12px
+
+.recomendation-news-item__link
+    position: absolute
+    left: 40px
+    bottom: 50px
+    padding-top: 10px
+    border-top: solid 1px #ececec
+
+.recomendation-news-item__link__image
+    margin-right: 5px
+
+.recomendation-news-item__link__button
+    @extend %p
+    font-size: 14px
+    font-weight: 600
+    color: $color-main-light
+    text-decoration: none
+
+    &:hover
+        color: $color-black
+
+
+
+/* *** CONTACT PAGE *** */
+.contacts
+    width: 100%
+    height: auto
+    padding-top: 280px
+    padding-bottom: 100px
+
+    >.cont
+        >.cont-flex
+            padding: 0
+            align-items: stretch
+
+            @media ( max-width: 640px )
+                display: block
+
+.contacts__title
+    @extend %h1
+    padding-bottom: 50px
+
+.contacts__content
+    width: 60%
+    height: auto
+    padding: 50px 40px
+    margin-right: 30px
+    @extend %block
+
+    @media ( max-width: 1024px )
+        width: 100%
+
+.contacts__content__is-call
+    width: 100%
+    height: auto
+    @extend %flex-l
+    padding-bottom: 20px
+
+.contacts__content__is-call-item
+    margin-right: 30px
+
+    &:last-child
+        margin-right: 0
+
+.contacts__content__is-call-item__label
+    @extend %p-info
+
+.contacts__content__is-call-item__text
+    @extend %p
+    color: $color-main-light
+    font-weight: 600
+
+.contacts__content__address
+    width: 100%
+    height: auto
+
+.contacts__content__address__label
+    @extend %p-info
+
+.contacts__content__address__text
+    @extend %p
+    padding-bottom: 20px
+
+.contacts__content__time
+    width: 100%
+    height: auto
+
+.contacts__content__time__label
+    @extend %p-info
+
+.contacts__content__time__text
+    @extend %p
+    padding-bottom: 30px
+
+.contacts__content__time__button
+    width: 100%
+    height: auto
+
+.contacts__content__time__button-item
+    @extend %button__not-fill
+
+.contacts__image
+    width: 40%
+    height: auto
+    @extend %block
+    background-image: url('../image/contacts/Rectangle 93.png')
+    background-repeat: no-repeat
+    background-size: auto 120%
+    background-position: 50% 50%
+
+    @media ( max-width: 1024px )
+        display: none
+
+.contacts__map
+    width: 100%
+    height: auto
+    margin-top: 20px
+
+.contacts__map-item
+    width: 100%
+    height: 430px
+    @extend %block
+    background-image: url('../image/contacts/image 35.png')
+    background-repeat: no-repeat
+    background-position: 50% 50%
+    background-size: auto 105%
+
+
+
+/* *** VIEW-SERVICE PAGE *** */
+.view-service
+    width: 100%
+    height: auto
+    padding-bottom: 100px
+
+.view-service__banner
+    width: 100%
+    height: auto
+    padding-top: 180px
+    padding-bottom: 100px
+    background-image: url('../image/services/image 45.png')
+    background-repeat: no-repeat
+    background-position: 50% 50%
+    background-size: 100%
+
+    @media ( max-width: 1600px )
+        background-size: auto 100%
+
+.view-service__banner__title
+    @extend %h1
+    color: $color-silver
+    width: 60%
+
+.view-service__banne__hr
+    width: 60%
+    height: auto
+    border-top: solid 1px #ececec
+    margin-top: 20px
+    margin-bottom: 30px
+
+    @media ( max-width: 960px )
+        width: 100%
+
+.view-service__banne__data
+    @extend %flex-l
+
+.view-service__banne__data__link
+    @extend %button__not-fill
+    border-color: $color-silver
+    color: $color-silver
+    margin-right: 50px
+
+.view-service__banne__data__item
+    margin-right: 50px
+
+    &:last-child
+        margin-right: 50px
+
+.view-service__banne__data__item__label
+    @extend %p-info
+    color: $color-silver
+
+.view-service__banne__data__item__text
+    @extend %p
+    color: $color-silver
+
+.view-service__content
+    width: 100%
+    height: auto
+    padding-top: 100px
+    padding-bottom: 100px
+
+    >.cont-flex
+        align-items: stretch
+
+        @media ( max-width: 960px )
+            display: block
+
+        >.cont__sub-left
+            width: 70%
+            height: auto
+            display: block
+            margin-right: 50px
+
+            @media ( max-width: 960px )
+                width: 100%
+                margin: 0
+
+        >.cont__sub-right
+            width: 30%
+            height: auto
+            display: block
+
+            @media ( max-width: 960px )
+                width: 100%
+                margin-top: 50px
+
+.view-service__content__text
+    @extend %p
+    padding-right: 100px
+
+    @media ( max-width: 1024px )
+        padding: 0
+
+.view-service__content__hr
+    width: 100%
+    height: auto
+    border-top: solid 1px #ececec
+    margin-top: 50px
+    margin-bottom: 50px
+
+.view-service__content__data
+    @extend %flex-l
+
+.view-service__content__data__link
+    @extend %button__fill
+
+.view-service__content__data__item
+    margin-right: 50px
+
+.view-service__content__data__item__label
+    @extend %p-info
+
+.view-service__content__data__item__text
+    @extend %p
+
+.view-service__content__recomendation-title
+    @extend %p-info
+    padding-bottom: 20px
+
+.view-service__content__recomendation-item
+    width: 100%
+    height: auto
+    padding: 30px
+    padding-bottom: 70px
+    @extend %block
+    position: relative
+    margin-bottom: 20px
+
+    &:last-child
+        margin-bottom: 0
+
+.view-service__content__recomendation-item__title
+    @extend %h3
+    font-weight: 700
+    font-size: 20px
+
+.view-service__content__recomendation-item__data
+    @extend %flex-r
+    position: absolute
+    right: 30px
+    bottom: 30px
+    border-top: solid 1px #ececec
+    padding-top: 10px
+
+.view-service__content__recomendation-item__data__price
+    @extend %p
+    font-size: 14px
+    margin-right: 20px
+
+.view-service__content__recomendation-item__data__link
+    @extend %flex-c
+
+.view-service__content__recomendation-item__data__link__image
+    margin-right: 5px
+
+.view-service__content__recomendation-item__data__link__button
+    @extend %p
+    font-size: 14px
+    font-weight: 600
+    color: $color-main-light
+    text-decoration: none
+
+    &:hover
+        color: $color-black
+
+.view-service__advantages
+    width: 100%
+    height: auto
+    padding-top: 100px
+
+    >.cont-flex
+        align-items: stretch
+
+        @media ( max-width: 960px )
+            display: block
+
+.view-service__advantages-item
+    width: calc(100%/3)
+    height: auto
+
+    @media ( max-width: 960px )
+        width: 50%
+        margin: 0 auto
+        margin-bottom: 30px
+
+        &:last-child
+            margin-bottom: 0
+
+.view-service__advantages-item__image
+    margin-bottom: 20px
+
+.view-service__advantages-item__title
+    @extend %h3
+    padding-left: 30px
+
+.view-service__advantages-item__text
+    @extend %p
+    padding-left: 30px
+    padding-top: 10px
+
+
+/* The model window on the view-service page */
+.view-service__modal
+    position: fixed
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    z-index: 9999
+    background-color: $color-black_a
+    transform: translateX(-100%)
+    transition: 0.2s
+
+    &.active
+        transform: none
+
+.view-service__modal-item
+    max-width: 960px
+    height: auto
+    margin: 0 auto
+    margin-top: 200px
+    padding: 50px 40px
+    background-color: #fff
+    @extend %block
+    position: relative
+    background-image: url('../image/services/Union01.png')
+    background-repeat: no-repeat
+    background-position: 105% 80%
+    transform: scale(0,0)
+    transition: 0.2s
+
+    &.active
+        transform: none
+
+.view-service__modal-item__button
+    width: 30px
+    height: 30px
+    position: absolute
+    top: 50px
+    right: 40px
+    cursor: pointer
+
+.view-service__modal-item__title
+    @extend %h3
+
+.view-service__modal-item__text
+    @extend %p
+    padding-top: 15px
+    padding-bottom: 25px
+    width: 70%
+
+    >span
+        font-weight: 600
+
+    @media ( max-width: 640px )
+        width: 100%
+
+.view-service__modal-item__form
+    width: 70%
+    height: auto
+
+    @media ( max-width: 640px )
+        width: 100%
+
+.view-service__modal-item__form__small-input
+    width: 100%
+    height: auto
+    @extend %flex-c
+
+.view-service__modal-item__form__small-input-item
+    @extend %input
+    width: 50%
+    margin-right: 30px
+
+    &:last-child
+        margin-right: 0
+
+.view-service__modal-item__form__big-input
+    @extend %input
+    width: 100%
+    margin-top: 20px
+
+.view-service__modal-item__form__button
+    @extend %flex-l
+    margin-top: 20px
+
+.view-service__modal-item__form__button-item
+    width: 50%
+    @extend %input
+
+.view-service__modal-item__form__button__info
+    width: 50%
+    @extend %p-info
+
+    @media ( max-width: 640px )
+        color: $color-black
+
+
+
+/* *** REGISTRATION PAGE *** */
+.reg
+    width: 100%
+    height: auto
+    padding-top: 200px
+    padding-bottom: 100px
+
+.reg__content
+    width: 40%
+    height: auto
+    padding: 50px 40px
+    @extend %block
+
+    @media ( max-width: 960px )
+        width: 60%
+
+    @media ( max-width: 640px )
+        width: 70%
+
+.reg__content__title
+    @extend %h2
+
+.reg__content__form
+    width: 100%
+    height: auto
+
+.reg__content__form-item
+    @extend %input
+    margin-top: 20px
+
+    >button
+        width: 100%
+
+
+
+/* *** LOGIN PAGE *** */
+.login
+    width: 100%
+    height: auto
+    padding-top: 200px
+    padding-bottom: 100px
+
+.login__content
+    width: 40%
+    height: auto
+    padding: 50px 40px
+    @extend %block
+
+    @media ( max-width: 960px )
+        width: 60%
+
+    @media ( max-width: 640px )
+        width: 70%
+
+.login__content__title
+    @extend %h2
+
+.login__content__form
+    width: 100%
+    height: auto
+
+.login__content__form-item
+    @extend %input
+    margin-top: 20px
+
+    >button
+        width: 100%
+
+.login__content__restore-access
+    margin-top: 30px
+    @extend %flex-l
+
+.login__content__restore-access__image
+    margin-right: 5px
+
+.login__content__restore-access__link
+    @extend %p
+    font-size: 14px
+    font-weight: 600
+    color: $color-main-light
+    text-decoration: none
+
+    &:hover
+        color: $color-black
+
+
+
+
+/* *** TESTS PAGE *** */
+.banner-test
+    width: 100%
+    height: auto
+    padding-top: 180px
+    padding-bottom: 100px
+    background-image: url('../image/test/image 47.png')
+    background-position: 50% 50%
+    background-size: auto 110%
+    background-repeat: no-repeat
+
+.banner-test__title
+    @extend %h1
+    color: $color-silver
+    padding-top: 60px
+
+.banner-test__text
+    @extend %p
+    color: $color-silver
+    font-size: 18px
+    line-height: 31.5px
+    width: 70%
+    padding-top: 30px
+
+    @media ( max-width: 960px )
+        width: 100%
+
+.all-test
+    width: 100%
+    height: auto
+    padding-top: 100px
+    padding-bottom: 100px
+
+.all-test__title
+    @extend %h2
+    padding-bottom: 50px
+
+.all-test-item
+    width: 100%
+    height: auto
+    padding: 30px
+    @extend %block
+    margin-bottom: 30px
+
+    &:last-child
+        margin-bottom: 0
+
+.all-test-item__name
+    @extend %p
+    font-weight: 600
+    line-height: 28px
+
+.all-test-item__data
+    width: 100%
+    height: auto
+    @extend %flex-r
+    margin-top: 30px
+    border-top: solid 1px #ececec
+    padding-top: 20px
+
+.all-test-item__data__quest
+    @extend %p
+    font-size: 14px
+    margin-right: 30px
+
+.all-test-item__data__link
+    @extend %flex-c
+
+.all-test-item__data__link__image
+    margin-right: 5px
+
+.all-test-item__data__link__button
+    @extend %p
+    font-size: 14px
+    font-weight: 600
+    color: $color-main-light
+    text-decoration: none
+
+    &:hover
+        color: $color-black
+
+
+
+
+/* *** TESTS PAGE STEP 1 *** */
+.selected-test-step1
+    width: 100%
+    height: auto
+    padding-top: 180px
+    padding-bottom: 100px
+
+    >.cont
+        >.cont-flex
+            align-items: start
+
+            @media ( max-width: 1200px )
+                padding-left: 0
+                padding-right: 0
+                display: block
+
+            >.cont__sub-left
+                width: 30%
+                height: auto
+                display: block
+                @extend %block
+                padding: 30px
+                margin-right: 30px
+
+                @media ( max-width: 1200px )
+                    width: 100%
+                    margin-bottom: 30px
+                
+            >.cont__sub-right
+                width: 70%
+                display: block
+
+                @media ( max-width: 1200px )
+                    width: 100%
+
+                >.cont-flex
+                    margin-top: 20px
+
+                    @media ( max-width: 1200px )
+                        padding-left: 0
+                        padding-right: 0
+
+                    @media ( max-width: 780px )
+                        display: block
+                        margin-top: 0
+
+.selected-test-step1__title
+    @extend %h1
+    padding-top: 90px
+    padding-bottom: 50px
+
+.selected-test-step1__label
+    @extend %p-info
+    padding-bottom: 8px
+
+.selected-test-step1__text
+    @extend %p
+    font-weight: 600
+    font-size: 14px
+    line-height: 24.5px
+    padding-bottom: 20px
+
+.selected-test-step1__button
+    width: 100%
+    height: auto
+
+.selected-test-step1__button-item
+    @extend %button__not-fill
+    display: block
+    text-align: center
+
+.selected-test-step1__description
+    @extend %p
+    padding-bottom: 50px
+
+.selected-test-step1__random-ticket
+    width: 100%
+    height: auto
+    padding: 30px
+    @extend %block  
+    @extend %flex-c
+    justify-content: space-between
+
+.selected-test-step1__random-ticket__title
+    @extend %h3
+    font-size: 20px
+
+.selected-test-step1__random-ticket__link
+    @extend %flex-c
+
+.selected-test-step1__random-ticket__link__image
+    margin-right: 5px
+
+.selected-test-step1__random-ticket__link__button
+    @extend %p
+    font-size: 14px
+    font-weight: 600
+    color: $color-main-light
+    text-decoration: none
+
+    &:hover
+        color: $color-black
+
+.selected-test-step1__ticket
+    width: 50%
+    height: auto
+    padding: 30px
+    @extend %block
+    @extend %flex-c
+    justify-content: space-between
+    margin-right: 30px
+
+    &:last-child
+        margin-right: 0
+
+    @media ( max-width: 780px )
+        width: 100%
+        margin-top: 30px
+
+.selected-test-step1__ticket__title
+    @extend %h3
+    font-size: 20px
+
+.selected-test-step1__ticket__link
+    @extend %flex-c
+
+.selected-test-step1__ticket__link__image
+    margin-right: 5px
+
+.selected-test-step1__ticket__link__button
+    @extend %p
+    font-size: 14px
+    font-weight: 600
+    color: $color-main-light
+    text-decoration: none
+
+    &:hover
+        color: $color-black
+
+
+
+
+/* *** TESTS PAGE STEP 2 *** */
+.selected-test-step2
+    width: 100%
+    height: auto
+    padding-top: 180px
+    padding-bottom: 100px
+
+    >.cont
+        >.cont-flex
+            align-items: start
+
+            @media ( max-width: 960px )
+                display: block
+
+            >.cont__sub-left
+                width: 30%
+                display: block
+                padding: 30px
+                @extend %block
+                margin-right: 30px
+
+                @media ( max-width: 960px )
+                    width: 100%
+                    margin-bottom: 30px
+
+            >.cont__sub-right
+                width: 70%
+                display: block
+
+                @media ( max-width: 960px )
+                    width: 100%
+
+.selected-test-step2__title
+    @extend %h1
+    padding-top: 90px
+    padding-bottom: 50px
+
+.selected-test-step2__label
+    @extend %p-info
+
+.selected-test-step2__text
+    @extend %p
+    font-size: 14px
+    font-weight: 600
+    padding-bottom: 20px
+
+.selected-test-step2__buttons
+    width: 100%
+    height: auto
+
+.selected-test-step2__buttons-item
+    display: block
+    @extend %button__not-fill
+    text-align: center
+    margin-bottom: 10px
+
+    &:last-child
+        margin-bottom: 0
+
+.selected-test-step2__quest
+    @extend %block
+    width: 100%
+    height: auto
+    padding: 30px
+    margin-bottom: 30px
+
+    &:last-child
+        margin-bottom: 0
+
+.selected-test-step2__quest__description
+    @extend %p
+
+    >span
+        font-weight: 600
+
+.selected-test-step2__quest__label
+    @extend %p-info
+    padding-top: 20px
+    padding-bottom: 10px
+
+.selected-test-step2__quest__form
+    width: 100%
+    height: auto
+
+.selected-test-step2__quest__form-item
+    width: 100%
+    height: auto
+    @extend %flex-l
+    margin-bottom: 10px
+
+    &:last-child
+        margin-bottom: 0
+
+    >input[type="checkbox"]
+        display: none
+
+    >input[type="radio"]
+        display: none
+
+    >input[type="checkbox"]:checked + label 
+        >.selected-test-step2__quest__form-item__before-check
+            >.selected-test-step2__quest__form-item__before-check-item
+                display: block
+
+    >input[type="radio"]:checked + label 
+        >.selected-test-step2__quest__form-item__before-radio
+            >.selected-test-step2__quest__form-item__before-radio-item
+                display: block
+
+    >label
+        @extend %p
+        cursor: pointer
+        @extend %flex-l
+
+.selected-test-step2__quest__form-item__before-check
+    min-width: 22px
+    min-height: 22px
+    margin-right: 22px
+    border: solid 2px $color-main-light
+    border-radius: 5px
+    @extend %flex-c
+
+.selected-test-step2__quest__form-item__before-check-item
+    min-width: 14px
+    min-height: 14px
+    background-color: $color-main-light
+    border-radius: 3px
+    display: none
+
+.selected-test-step2__quest__form-item__before-radio
+    min-width: 22px
+    min-height: 22px
+    margin-right: 22px
+    border: solid 2px $color-main-light
+    border-radius: 11px
+    @extend %flex-c
+
+.selected-test-step2__quest__form-item__before-radio-item
+    min-width: 14px
+    min-height: 14px
+    background-color: $color-main-light
+    border-radius: 11px
+    display: none
+
+.selected-test-step2__button-stop
+    @extend %input
+    @extend %flex-r
+
+
+
+/* *** TESTS PAGE STEP 3 *** */
+/* All styles are inherited from the slected-test-step2 page */
+.selected-test-step2__quest.correct
+    border: solid 1px $color-green
+
+.selected-test-step2__quest.not-correct
+    border: solid 1px $color-red
+
+.selected-test-step2__quest__description
+    >span.correct
+        color: $color-green
+
+    >span.not-correct
+        color: $color-red
+
+.selected-test-step2__quest__form-item
+    >label.correct
+        color: $color-green
+    
+    >label.not-correct
+        color: $color-red
+
+.selected-test-step2__quest__form-item__before-check.correct
+    border-color: $color-green
+
+.selected-test-step2__quest__form-item__before-check-item.correct
+    background-color: $color-green
+    display: block
+
+.selected-test-step2__quest__form-item__before-radio.correct
+    border-color: $color-green
+
+.selected-test-step2__quest__form-item__before-radio-item.correct
+    background-color: $color-green
+    display: block
+
+.selected-test-step2__quest__form-item__before-check.not-correct
+    border-color: $color-red
+
+.selected-test-step2__quest__form-item__before-check-item.not-correct
+    background-color: $color-red
+    display: block
+
+.selected-test-step2__quest__form-item__before-radio.not-correct
+    border-color: $color-red
+
+.selected-test-step2__quest__form-item__before-radio-item.not-correct
+    background-color: $color-red
+    display: block
+
+.selected-test-step3__data
+    width: 100%
+    height: auto
+    margin-top: 50px
+    padding-top: 45px
+    border-top: solid 1px #ececec
+    @extend %flex-c
+    justify-content: space-between
+
+.selected-test-step3__data__block
+    @extend %flex-l
+
+.selected-test-step3__data__block-item
+    margin-right: 50px
+
+    &:last-child
+        margin-right: 0
+
+.selected-test-step3__data__block-item__label
+    @extend %p-info
+
+.selected-test-step3__data__block-item__text
+    @extend %p
+    font-size: 14px
+    font-weight: 600
+
+.selected-test-step3__data__button
+    >.selected-test-step3__data__button-item
+        @extend %button__fill
+
+
+
+
+/* *** QUESTIONNAIRE PAGA *** */
+.questionnaire
+    padding-top: 180px
+    padding-bottom: 100px
+    background-image: url('../image/questionnaire/image 49.png')
+    background-position: 100% 50%
+    background-repeat: no-repeat
+    background-size: auto 100%
+
+    @media ( max-width: 1700px )
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('../image/questionnaire/image 49.png')
+        background-position: 100% 100% , 100% 50%
+        background-repeat: no-repeat
+        background-size: auto, auto 100%
+
+    @media ( max-width: 1024px )
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('../image/questionnaire/image 49.png')
+        background-position: 100% 100% , 100% 50%
+        background-repeat: no-repeat
+        background-size: auto, 100% auto
+        
+
+.questionnaire__title
+    @extend %h1
+    padding-top: 90px
+    padding-bottom: 30px
+    width: 70%
+
+    @media ( max-width: 1024px )
+        width: 100%
+
+.questionnaire__description
+    @extend %p
+    width: 70%
+
+    @media ( max-width: 1024px )
+        width: 100%
+
+.questionnaire__form
+    width: 70%
+
+    @media ( max-width: 1024px )
+        width: 100%
+
+.questionnaire__form__group
+    width: 100%
+    height: auto
+    margin-top: 50px
+
+.questionnaire__form__group__label
+    @extend %p-info
+    
+.questionnaire__form__group__items
+    width: 100%
+    height: auto
+    margin-top: 20px
+
+.questionnaire__form__group__items-item
+    width: 100%
+    height: auto
+    padding: 30px
+    @extend %block
+
+.questionnaire__form__group__items-item__button
+    @extend %flex-l
+
+    >input[type="radio"]
+        display: none
+
+    >label
+        @extend %flex-l
+        @extend %h3
+        font-size: 20px
+        cursor: pointer
+
+    >input[type="radio"]:checked + label
+        >.questionnaire__form__group__items-item__button__radio
+            >.questionnaire__form__group__items-item__button__radio-item
+                display: block
+
+.questionnaire__form__group__items-item__button__radio
+    min-width: 22px
+    min-height: 22px
+    border: 2px solid $color-main-light
+    border-radius: 11px
+    @extend %flex-c
+    margin-right: 20px
+
+.questionnaire__form__group__items-item__button__radio-item
+    min-width: 14px
+    min-height: 14px
+    background-color: $color-main-light
+    border-radius: 11px
+    display: none
+
+.questionnaire__form__group__items-item__count
+    @extend %p-info
+    color: $color-main-light
+
+.questionnaire__form__group__items-item__description
+    @extend %p
+    padding-top: 10px
+    padding-bottom: 30px
+    font-size: 14px
+
+.questionnaire__form__group__items-item__count-illustration
+    width: 100%
+    height: auto
+    @extend %flex-l
+    justify-content: space-between
+
+    >div
+        width: 19px
+        height: 19px
+        background-image: url('../image/questionnaire/image 51.png')
+        background-repeat: no-repeat
+        background-position: 50% 50%
+        background-size: 100%
+
+        &.selected
+            background-image: url('../image/questionnaire/image 50.png')
+
+.questionnaire__form__general-input
+    border-top: solid 1px #ececec
+    border-bottom: solid 1px #ececec
+    margin-top: 50px
+    margin-bottom: 50px
+    padding-top: 50px
+    padding-bottom: 50px
+
+    >.cont-flex
+        margin-bottom: 20px
+
+        @media ( max-width: 1200px )
+            padding-left: 0
+            padding-right: 0
+
+        >.cont__sub-left
+            display: block
+            margin-right: 30px
+
+        >.cont__sub-right
+            display: block
+
+.questionnaire__form__general-input-item
+    @extend %input
+    width: 100% 
+
+.questionnaire__form__general-input-item__big-item 
+    @extend %input
+    width: 100% 
+
+.questionnaire__form__cause
+    width: 100%
+    height: auto
+
+.questionnaire__form__cause__label
+    @extend %p-info
+    padding-bottom: 10px
+
+.questionnaire__form__cause__items
+    width: 100%
+    height: auto
+
+.questionnaire__form__cause__items-item
+    @extend %flex-l
+    margin-bottom: 10px
+
+    &:last-child
+        margin-bottom: 0
+
+    >input[type="checkbox"]
+        display: none
+
+    >label
+        @extend %flex-l
+        @extend %p
+        cursor: pointer
+
+    >input[type="checkbox"]:checked + label
+        >.questionnaire__form__cause__items-item__check
+            >.questionnaire__form__cause__items-item__check-item
+                display: block
+
+.questionnaire__form__cause__items-item__check
+    min-width: 22px
+    min-height: 22px
+    border: 2px solid $color-main-light
+    border-radius: 5px
+    @extend %flex-c
+    margin-right: 20px
+
+.questionnaire__form__cause__items-item__check-item
+    min-width: 14px
+    min-height: 14px
+    background-color: $color-main-light
+    border-radius: 3px
+    display: none
+
+.questionnaire__form__edu
+    margin-top: 50px
+
+.questionnaire__form__edu__label
+    margin-bottom: 15px
+    @extend %p-info
+
+.questionnaire__form__edu__items
+    width: 100%
+    height: auto
+
+.questionnaire__form__edu__items-item
+    @extend %flex-l
+    margin-bottom: 10px
+
+    &:last-child
+        margin-bottom: 0
+
+    >input[type="radio"]
+        display: none
+
+    >label
+        @extend %flex-l
+        @extend %p
+        cursor: pointer
+
+    >input[type="radio"]:checked + label
+        >.questionnaire__form__edu__items-item__check
+            >.questionnaire__form__edu__items-item__check-item
+                display: block
+
+.questionnaire__form__edu__items-item__check
+    min-width: 22px
+    min-height: 22px
+    border: 2px solid $color-main-light
+    border-radius: 11px
+    @extend %flex-c
+    margin-right: 20px
+
+.questionnaire__form__edu__items-item__check-item
+    min-width: 14px
+    min-height: 14px
+    background-color: $color-main-light
+    border-radius: 11px
+    display: none
+
+.questionnaire__form__button
+    width: 100%
+    height: auto
+    margin-top: 50px
+    @extend %flex-c
+    justify-content: space-between
+
+.questionnaire__form__button-item
+    @extend %input
+
+.questionnaire__form__button__text
+    @extend %p-info
+    width: 60%

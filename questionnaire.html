@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>FGA</title>
+</head>
+<body>
+    <div class="wrap">
+
+        <!-- The hedare block -->
+        <header>
+            <!-- The bar a top position -->
+            <div class="top-bar">
+                <div class="cont-flex">
+                    <div class="cont__sub-left">    
+                        <div class="top-bar__phone">
+                            <img src="./image/ui/phone.png" class="top-bar__phone__image">
+                            <div class="top-bar__phone__text">
+                                +7 (495) 822-17-15
+                            </div>
+                        </div>
+                        <div class="top-bar__email">
+                            <img src="./image/ui/email.png" class="top-bar__email__image">
+                            <div class="top-bar__email__text">
+                                info@prosout.ru
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cont__sub-right">
+                        <div class="top-bar__authentication">
+                            <img src="./image/ui/key.png" class="top-bar__authentification__image">
+                            <div class="top-bar__authentification__buttons">
+                                <a class="top-bar__authentification__buttons-item" href="reg.html">Зарегистрироваться</a>
+                                <span>/</span>
+                                <a class="top-bar__authentification__buttons-item" href="login.html">Войти</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- The navigation(menu) -->
+            <nav class="nav">
+                <div class="cont-flex">
+                    <div class="cont__sub-left">
+                        <a href="index.html" class="nav__logo">
+                            <img src="./image/logo/logo__light.png" alt="fga.ru" class="nav__logo-item">
+                        </a>
+                    </div>
+                    <div class="cont__sub-right nav-items">
+                        <a class="nav__link" href="index.html">Главная</a>
+                        <a class="nav__link" href="about.html">О компании</a>
+                        <a class="nav__link" href="index.html#services">Услуги</a>
+                        <a class="nav__link" href="news.html">Новости</a>
+                        <a class="nav__link" href="contacts.html">Контакты</a>
+                        <a class="nav__link" href="tests.html">Тесты</a>
+                        <div class="nav__mobile-button">
+                            <div></div><div></div><div></div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- The mobile navigation -->
+            <div class="nav-mobile">
+                <div class="nav-mobile__cont">
+                    <div class="nav-mobile__logo">
+                        <img src="./image/logo/logo__color.png">
+                    </div>
+                    <img src="./image/ui/nav_close.svg" class="nav-mobile__button-close nav-mobile__button-close1">
+                    <div class="nav-mobile-items">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-scroll">
+                <div class="cont-flex">
+                    <div class="cont__sub-left">
+                        <div class="nav-scroll__logo">
+                            <a href="index.html">
+                                <img src="./image/logo/logo__color.png" class="nav-scroll__logo-item">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="cont__sub-right nav-scroll__items">
+                        
+                        <div class="nav-scroll__button">
+                            <div></div><div></div><div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+        <main>
+
+            <span class="bg bg-white"></span>
+
+            <div class="questionnaire">
+                <div class="cont">
+                    <h1 class="questionnaire__title">АНКЕТА</h1>
+                    <p class="questionnaire__description">
+                        Добрый день! Компания FGA приглашает вас пройти обучение по программе Промышленная безопасность. 
+                        Вам необходимо заполнить  поля и указать дату обучения. Выбор необходимо сделать до 15.01.2022 года.  
+                        Если выбор не будет сделан, система автоматически распределит вас по свободным местам 15.01.2022. 
+                    </p>
+                    <form action="" class="questionnaire__form">
+
+                        <div class="questionnaire__form__group">
+                            <div class="questionnaire__form__group__label">Выберите группу</div>
+
+                            <div class="questionnaire__form__group__items">
+                                <div class="questionnaire__form__group__items-item">
+
+                                    <div class="cont-flex">
+                                        <div class="cont__sub-left">
+                                            <div class="questionnaire__form__group__items-item__button">
+                                                <input id="gr1" type="radio" name="g1">
+                                                <label for="gr1">
+                                                    <div class="questionnaire__form__group__items-item__button__radio">
+                                                        <div class="questionnaire__form__group__items-item__button__radio-item"></div>
+                                                    </div>
+                                                    Первая группа
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="cont__sub-right">
+                                            <div class="questionnaire__form__group__items-item__count">
+                                                Осталось мест: 7
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p class="questionnaire__form__group__items-item__description">
+                                        Mauris eu tempus sem. Pellentesque malesuada felis ut magna convallis dignissim. Quisque 
+                                        laoreet venenatis elit, ac pharetra mauris suscipit nec. Quisque interdum nunc non enim 
+                                        ornare pulvinar.
+                                    </p>
+
+                                    <div class="questionnaire__form__group__items-item__count-illustration">
+                                        <div class="selected"></div>
+                                        <div class="selected"></div>
+                                        <div class="selected"></div>
+                                        <div class="selected"></div>
+                                        <div class="selected"></div>
+                                        <div class="selected"></div>
+                                        <div class="selected"></div>
+                                        <div class="selected"></div>
+                                        <div class="selected"></div>
+                                        <div class="selected"></div>
+                                        <div class="selected"></div>
+                                        <div class="selected"></div>
+                                        <div class="selected"></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="questionnaire__form__group__items">
+                                <div class="questionnaire__form__group__items-item">
+
+                                    <div class="cont-flex">
+                                        <div class="cont__sub-left">
+                                            <div class="questionnaire__form__group__items-item__button">
+                                                <input id="gr2" type="radio" name="g1">
+                                                <label for="gr2">
+                                                    <div class="questionnaire__form__group__items-item__button__radio">
+                                                        <div class="questionnaire__form__group__items-item__button__radio-item"></div>
+                                                    </div>
+                                                    Вторая группа
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="cont__sub-right">
+                                            <div class="questionnaire__form__group__items-item__count">
+                                                Осталось мест: 9
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p class="questionnaire__form__group__items-item__description">
+                                    </p>
+
+                                    <div class="questionnaire__form__group__items-item__count-illustration">
+                                        <div class="selected"></div>
+                                        <div class="selected"></div>
+                                        <div class="selected"></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="questionnaire__form__general-input">
+
+                            <div class="cont-flex">
+                                <div class="cont__sub-left">
+                                    <div class="questionnaire__form__general-input-item">
+                                        <label for="">Фамилия</label>
+                                        <input type="text" placeholder="Иванов">
+                                    </div>
+                                </div>
+                                <div class="cont__sub-right">
+                                    <div class="questionnaire__form__general-input-item">
+                                        <label for="">Имя</label>
+                                        <input type="text" placeholder="Иван">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="cont-flex">
+                                <div class="cont__sub-left">
+                                    <div class="questionnaire__form__general-input-item">
+                                        <label for="">Отчество</label>
+                                        <input type="text" placeholder="Иванович">
+                                    </div>
+                                </div>
+                                <div class="cont__sub-right">
+                                    <div class="questionnaire__form__general-input-item">
+                                        <label for="">E-mail</label>
+                                        <input type="email" placeholder="ivanovivan@mail.com">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="questionnaire__form__general-input-item__big-item">
+                                <label for="">Должность</label>
+                                <input type="email" placeholder="Электрик">
+                            </div>
+
+                        </div>
+                        
+                        <div class="questionnaire__form__cause">
+                            <div class="questionnaire__form__cause__label">Причина зачисления на курс</div>
+                            <div class="questionnaire__form__cause__items">
+
+                                <div class="questionnaire__form__cause__items-item">
+                                    <input id="p1" type="checkbox">
+                                    <label for="p1">
+                                        <div class="questionnaire__form__cause__items-item__check">
+                                            <div class="questionnaire__form__cause__items-item__check-item"></div>
+                                        </div>
+                                        Причина 1
+                                    </label>
+                                </div>
+
+                                <div class="questionnaire__form__cause__items-item">
+                                    <input id="p2" type="checkbox">
+                                    <label for="p2">
+                                        <div class="questionnaire__form__cause__items-item__check">
+                                            <div class="questionnaire__form__cause__items-item__check-item"></div>
+                                        </div>
+                                        Причина 2
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="questionnaire__form__edu">
+                            <div class="questionnaire__form__edu__label">Ваше образование</div>
+                            <div class="questionnaire__form__edu__items">
+
+                                <div class="questionnaire__form__edu__items-item">
+                                    <input id="edu1" type="radio" name="edu">
+                                    <label for="edu1">
+                                        <div class="questionnaire__form__edu__items-item__check">
+                                            <div class="questionnaire__form__edu__items-item__check-item"></div>
+                                        </div>
+                                        Среднее
+                                    </label>
+                                </div>
+
+                                <div class="questionnaire__form__edu__items-item">
+                                    <input id="edu2" type="radio" name="edu">
+                                    <label for="edu2">
+                                        <div class="questionnaire__form__edu__items-item__check">
+                                            <div class="questionnaire__form__edu__items-item__check-item"></div>
+                                        </div>
+                                        Высшее
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="questionnaire__form__button">
+                            <div class="questionnaire__form__button-item">
+                                <button>Зарегистрироваться</button>
+                            </div>
+                            <div class="questionnaire__form__button__text">
+                                Нажимая на кнопку “Зарегистрироваться”, вы даете 
+                                согласие на обработку персональных данных
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </main>
+
+        <footer>
+
+            <div class="footer">
+                <div class="cont">
+
+                    <div class="footer__title">
+                        <div class="footer__title__logo">
+                            <img src="./image/logo/logo__footer.png" class="footer__title__logo-item">
+                        </div>
+                        <div class="footer__title__text">
+                            <h3 class="footer__title__text-item">ООО "FGA"</h3>
+                        </div>
+                        <div class="footer__title__hr"></div>
+                    </div>
+
+                    <div class="footer__content">
+
+                        <div class="footer__content__text">
+                            Обучайте сотрудников без отрыва от производства, в удобное 
+                            время и без командировочных расходов. Наша система 
+                            дистанционного обучения соответствует требованиям № 
+                            273-ФЗ «Об образовании в Российской Федерации»
+                        </div>
+
+                        <div class="footer__content__nav1">
+                            <a href="" class="footer__content__nav1-item">Обучение по охране труда</a>
+                            <a href="" class="footer__content__nav1-item">Оценка профессиональных рисков</a>
+                            <a href="" class="footer__content__nav1-item">Специальная оценка условий труда</a>
+                            <a href="" class="footer__content__nav1-item">Производственный контроль</a>
+                            <a href="" class="footer__content__nav1-item">Экологический консалтинг</a>
+                        </div>
+
+                        <div class="footer__content__nav2">
+                            <a href="" class="footer__content__nav2-item">О компании</a>
+                            <a href="" class="footer__content__nav2-item">Документы и лицензии</a>
+                            <a href="" class="footer__content__nav2-item">Контактная информация</a>
+                        </div>
+
+                        <div class="footer__content__contact">
+                            <div class="footer__content__contact__text">
+                                +7 (495) 822-17-15<br>
+                                info@prosout.ru
+                            </div>
+                            <div class="footer__content__contact__social">
+                                <a href="" class="footer__content__contact__social__link">
+                                    <img src="./image/ui/vk.png">
+                                </a>
+                                <a href="" class="footer__content__contact__social__link">
+                                    <img src="./image/ui/fb.png">
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="footer__info-text">
+                        Все содержимое сайта является собственностью компании и 
+                        защищено действующим законодательством, регулирующим вопросы 
+                        авторского права. В связи с чем, пользователи сайта могут 
+                        использовать его содержание в личных и некоммерческих целях. 
+                        Использование содержания сайта в иных случаях не допускается.
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="copyright">
+                <div class="cont-flex">
+                    <div class="cont__sub-left">
+                        <div class="copyright__text">
+                            © ООО "FGA", 2022
+                        </div>
+                    </div>
+                    <div class="cont__sub-right">
+                        <div class="copyright__ideait">
+                            <div class="copyright__ideait__text">
+                                Сайт разработан в 
+                            </div>
+                            <div class="copyright__ideait__logo">
+                                <a href="https://ideait.ru/">
+                                    <img src="./image/logo__ideait.png"> 
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+
+    </div>
+    
+
+
+
+    <script src="./jquery/jquery-3.6.0.min.js"></script>
+    <script src="./js/nav-mobile.js"></script>
+    <script src="./js/nav-scroll.js"></script>
+    <script src="./js/nav-color.js"></script>
+</body>
+</html>
